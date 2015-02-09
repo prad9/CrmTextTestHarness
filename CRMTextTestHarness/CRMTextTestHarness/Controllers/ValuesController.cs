@@ -12,6 +12,16 @@ namespace CRMTextTestHarness.Controllers
 		// GET api/values
 		public IEnumerable<string> Get()
 		{
+			var crmTextApiAdapter = new CrmTextApiAdapter();
+			var customer = new Customer()
+			{
+				Method = "optincustomer",
+				FirstName = "Mina",
+				LastName = "Test",
+				PhoneNumber = "9736415077"
+			};
+			crmTextApiAdapter.OptInCustomer(customer);
+
 			return new string[] { "value1", "value2" };
 		}
 
